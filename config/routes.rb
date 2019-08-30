@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :shoutout_comments
-  resources :users
+  # resources :users
   resources :secrets
   resources :shoutouts
   resources :secret_comments
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :secret_likes
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  post '/login', to: 'auth#login' 
-  # post '/signup' to: 'users#create'
-  # get 'users/:id' to: 'users#show'
+  post '/login', to: 'auth#login'
+  post '/signup', to: 'users#create'
+  get '/users/:id', to: 'users#show'
 end
