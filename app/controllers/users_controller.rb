@@ -6,7 +6,11 @@ class UsersController < ApplicationController
 
     def create
         user = User.create(user_params)
-        render json: user
+        if user.valid?
+            render json: { token: encode_token(user_payload(user)) }
+        else
+            render json: { errors: users.errors.full_messages }
+        end
     end
 
     private
