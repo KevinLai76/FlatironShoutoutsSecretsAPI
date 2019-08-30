@@ -7,9 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-user1 = User.create(username: 'test', password:'abc123')
+user1 = User.create(username: 'test1', password:'abc123')
 user2 = User.create(username: 'test2', password:'abc123')
-
 
 secret1 = Secret.create(content: 'This is a secret', user: user1)
 secret2 = Secret.create(content: 'This is also a secret', user:user2)
