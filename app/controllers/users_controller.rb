@@ -1,9 +1,4 @@
 class UsersController < ApplicationController
-    def show
-        user = User.find(params[:id])
-        render json: user
-    end
-
     def create
         user = User.create(user_params)
         if user.valid?
@@ -11,6 +6,10 @@ class UsersController < ApplicationController
         else
             render json: { errors: users.errors.full_messages }
         end
+    end
+    
+    def profile
+        render json: current_user
     end
 
     private
