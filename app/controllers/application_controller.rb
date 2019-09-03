@@ -6,9 +6,9 @@ class ApplicationController < ActionController::API
     def user_payload(user)
         { user_id: user.id }
     end
-    
+
     def token 
-        request.headers["Authorization"].split(" ")[1]
+        request.headers["Authorization"]
     end
 
     def decode_token
@@ -16,8 +16,7 @@ class ApplicationController < ActionController::API
     end
 
     def current_user
-        user_id = decode_token[0]["user_id"]
-        User.find(user_id)
+        User.find(decode_token[0]['user_id'])
     end
 
 end
