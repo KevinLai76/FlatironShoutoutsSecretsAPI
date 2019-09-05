@@ -1,7 +1,9 @@
 class ShoutoutLikesController < ApplicationController
     def create
-        like = ShoutoutLike.create(shoutout_like_params)
-        render json: like
+        if current_user
+            like = ShoutoutLike.create(shoutout_like_params)
+            render json: like
+        end
     end
 
     private
