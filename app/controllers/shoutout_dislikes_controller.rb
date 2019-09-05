@@ -1,7 +1,9 @@
 class ShoutoutDislikesController < ApplicationController
     def create
-        dislike = ShoutoutDislike.create(shoutout_dislike_params)
-        render json: dislike        
+        if current_user
+            dislike = ShoutoutDislike.create(shoutout_dislike_params)
+            render json: dislike        
+        end
     end
 
     private
