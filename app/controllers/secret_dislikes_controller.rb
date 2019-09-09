@@ -7,7 +7,6 @@ class SecretDislikesController < ApplicationController
     private
 
     def secret_dislike_params
-        byebug
         params.permit(:user_id, :secret_id)
     end
 end

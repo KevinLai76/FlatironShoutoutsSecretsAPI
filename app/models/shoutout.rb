@@ -4,3 +4,5 @@ class Shoutout < ApplicationRecord
   has_many :shoutout_likes
   has_many :shoutout_dislikes
 end
+
+

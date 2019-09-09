@@ -1,7 +1,9 @@
 class SecretLikesController < ApplicationController
     def create
-        like = SecretLike.create(secret_like_params)
-        render json: like
+        if current_user
+            like = SecretLike.create(secret_like_params)
+            render json: like
+        end
     end
 
     private
