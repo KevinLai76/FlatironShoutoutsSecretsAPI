@@ -83,3 +83,7 @@ production:
   database: flatiron_shoutouts_secrets_production
   username: flatiron_shoutouts_secrets
   password: <%= ENV['FLATIRON_SHOUTOUTS_SECRETS_DATABASE_PASSWORD'] %>
+  # url/pool are additions for heroku, delete if you need to reset to default
+  # url:  <%= ENV["DATABASE_URL"] %>
+  # pool: <%= ENV["DB_POOL"] || ENV['RAILS_MAX_THREADS'] || 5 %>
+
