@@ -9,6 +9,10 @@ threads threads_count, threads_count
 
 # Specifies the `port` that Puma will listen on to receive requests; default is 3000.
 #
+
+# rackup is a new addition for heroku 
+# rackup DefaultRackup
+
 port        ENV.fetch("PORT") { 3000 }
 
 # Specifies the `environment` that Puma will run in.
@@ -21,6 +25,8 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # Workers do not work on JRuby or Windows (both of which do not support
 # processes).
 #
+
+# this was commented out as well before heroku, comment out to reset to default
 # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
 
 # Use the `preload_app!` method when specifying a `workers` number.
@@ -28,7 +34,14 @@ environment ENV.fetch("RAILS_ENV") { "development" }
 # before forking the application. This takes advantage of Copy On Write
 # process behavior so workers use less memory.
 #
+
+# preload_app was commented out
 # preload_app!
+
+# on worker boot entire block was newly implemented for heroku delete entire block to reset to default
+# on_worker_boot do
+#     ActiveRecord::Base.establish_connection
+# end
 
 # Allow puma to be restarted by `rails restart` command.
 plugin :tmp_restart

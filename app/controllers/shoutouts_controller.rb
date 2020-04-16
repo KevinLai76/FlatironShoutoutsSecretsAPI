@@ -20,8 +20,8 @@ class ShoutoutsController < ApplicationController
         # shoutout.shoutout_dislikes.destroy
         # shoutout.shoutout_likes.destroy
         # shoutout.shoutout_comments.destroy
-    #     shoutout.destroy
-    #     render json: shoutout
+        # shoutout.destroy
+        # render json: shoutout
     # end
     
     private
